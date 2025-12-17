@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Landing Page</title>
+
+    <!-- ================= CSS STYLING ================= -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ---------- Navigation Bar ---------- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background-color: #0a1a2f;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+        /* ---------- General Section Style ---------- */
+        section {
+            min-height: 100vh;
+            padding: 120px 40px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* ---------- Individual Sections ---------- */
+        #home {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        #about {
+            background-color: #f4f4f4;
+        }
+
+        #services {
+            background-color: #e0e0e0;
+        }
+
+        #contact {
+            background-color: #d0d0d0;
+        }
+
+        /* ---------- Contact Form ---------- */
+        form {
+            max-width: 500px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #16305a;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= NAVIGATION MENU ================= -->
+<nav id="navbar">
+    <div class="logo">InternshipTask</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HOME SECTION ================= -->
+<section id="home">
+    <h1>Welcome to Our Landing Page</h1>
+    <p>
+        This responsive landing page is developed as part of an internship program.
+        It demonstrates the use of HTML for structure, CSS for styling, and JavaScript
+        for interactivity such as scroll-based navigation color changes and hover effects.
+    </p>
+</section>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section id="about">
+    <h1>About Us</h1>
+    <p>
+        We are a team focused on building user-friendly and responsive web applications.
+        This project highlights front-end development skills including layout design,
+        responsive navigation bars, and dynamic UI behavior using JavaScript.
+        The navigation menu remains fixed and visible on all pages to enhance usability.
+    </p>
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section id="services">
+    <h1>Our Services</h1>
+    <p>
+        Our services include web design, front-end development, and responsive UI creation.
+        We use modern technologies like HTML5, CSS3, and JavaScript to build interactive
+        and visually appealing websites that work efficiently on all devices.
+    </p>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact">
+    <h1>Contact Us</h1>
+    <p>
+        If you have any queries or want to collaborate, feel free to contact us
+        using the form below.
+    </p>
+
+    <!-- Contact Form -->
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+    window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+</script>
+
+</body>
+</html>
